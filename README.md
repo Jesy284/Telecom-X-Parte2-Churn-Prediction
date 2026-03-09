@@ -100,8 +100,7 @@ Telecom-X-Parte2/
 ![Curva ROC](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%202.Curva%20ROC.png?raw=true)
 *Figura 2: AUC > 0.70 indica capacidad predictiva útil para negocio*
 
-![Importancia de Variables](<img width="990" height="590" alt="image" src="https://github.com/user-attachments/assets/f181b90a-8ade-47a0-927d-db09464da388" />
-)
+![Importancia de Variables](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%203.%20Importancia%20de%20Valiables%20en%20la%20Prediccion%20de%20Churn.png?raw=true)
 *Figura 3: `tipo_contrato` y `antiguedad_meses` son los predictores más fuertes*
 
 
