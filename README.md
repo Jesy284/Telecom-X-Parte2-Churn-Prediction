@@ -94,7 +94,7 @@ Telecom-X-Parte2/
 
 ### Visualizaciones Clave
 
-![Matriz de Confusión](images/matriz_confusion.png)
+![Matriz de Confusión](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%201.Matriz%20de%20Confusion.png?raw=true)
 *Figura 1: El modelo muestra buen equilibrio entre falsos positivos y falsos negativos*
 
 ![Curva ROC](images/curva_roc.png)
@@ -103,6 +103,26 @@ Telecom-X-Parte2/
 ![Importancia de Variables](images/importancia_variables.png)
 *Figura 3: `tipo_contrato` y `antiguedad_meses` son los predictores más fuertes*
 
+
+## 📊 Resultados del Modelo
+
+### Métricas Obtenidas
+- **Accuracy**: 76.3%
+- **Precision**: 54.3%
+- **Recall**: 68.2%
+- **F1-Score**: 60.5%
+- **ROC-AUC**: 0.830
+
+### Hallazgos Clave
+1. El **cargo mensual** es el predictor más importante del churn
+2. El **tipo de contrato** tiene un impacto significativo
+3. Los clientes con **menor antigüedad** tienen mayor riesgo
+4. El modelo identifica correctamente el 68% de los clientes que cancelarán
+
+### Recomendaciones de Negocio
+- Ofrecer descuentos en contratos mensuales para convertirlos a anuales
+- Implementar programa de retención para clientes nuevos (<12 meses)
+- Revisar estructura de precios para cargos mensuales altos
 ---
 
 ## 🔍 Insights Estratégicos
@@ -151,6 +171,12 @@ Prioridad 4: Segmentación Inteligente
 🎯 Ofertas personalizadas según perfil de riesgo
 📈 Monitoreo continuo de efectividad de acciones
 
+## 🚀 Ejecución
+1. Abre el notebook en Google Colab
+2. Ejecuta todas las celdas en orden
+3. Los datos se cargan automáticamente desde la API
+
+
 🚀 Instrucciones de Ejecución
 Requisitos
 Python 3.10+
@@ -162,6 +188,7 @@ Opción A: Google Colab (Recomendado)
 3. Busca: Jesy284/Telecom-X-Parte2
 4. Selecciona: Telecom-X-Parte2-Modelo-Predictivo.ipynb
 5. Ejecuta celda por celda con Shift+Enter
+
 Opción B: Ejecución Local
 # Clonar repositorio
 git clone https://github.com/Jesy284/Telecom-X-Parte2.git
@@ -216,11 +243,8 @@ Commit: git commit -m 'feat: agregar nueva funcionalidad'
 Push: git push origin feature/nueva-mejora
 Abre un Pull Request
 
-📝 Licencia
-Este proyecto está bajo la Licencia MIT. Ver LICENSE para detalles.
-👤 Autor
-Jesica Sosa G
-🐙 GitHub 🚀 Instrucciones de Ejecución
+
+ 🚀 Instrucciones de Ejecución
 Requisitos
 Python 3.10+
 Google Colab o Jupyter Notebook
