@@ -97,10 +97,11 @@ Telecom-X-Parte2/
 ![Matriz de Confusión](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%201.Matriz%20de%20Confusion.png?raw=true)
 *Figura 1: El modelo muestra buen equilibrio entre falsos positivos y falsos negativos*
 
-![Curva ROC](images/curva_roc.png)
+![Curva ROC](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%202.Curva%20ROC.png?raw=true)
 *Figura 2: AUC > 0.70 indica capacidad predictiva útil para negocio*
 
-![Importancia de Variables](images/importancia_variables.png)
+![Importancia de Variables](<img width="990" height="590" alt="image" src="https://github.com/user-attachments/assets/f181b90a-8ade-47a0-927d-db09464da388" />
+)
 *Figura 3: `tipo_contrato` y `antiguedad_meses` son los predictores más fuertes*
 
 
