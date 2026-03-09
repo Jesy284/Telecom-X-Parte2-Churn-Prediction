@@ -24,25 +24,25 @@ A partir de los datos limpios de la [Parte 1 (EDA)](https://github.com/Jesy284/T
 
 ## 📁 Estructura del Proyecto
 
-Telecom-X-Parte2/
+Telecom-X-Parte2-Churn-Prediction/
 │
 ├── 📁 data/
 │ ├── 📄 datos_tratados.csv # Dataset limpio de la Parte 1
 │ └── 📄 metricas_modelo.json # Métricas de evaluación del modelo
 │
-├── 📁 notebooks/
-│ └── 📄 Telecom-X-Parte2-Modelo-Predictivo.ipynb # Notebook principal ⭐
+├── notebooks/
+│ ── 📄 Telecom_X_Parte2_Modelo_Predictivo.ipynb # Notebook principal ⭐
 │
 ├── 📁 models/
 │ ├── 📄 modelo_churn.pkl # Modelo entrenado (Random Forest)
 │ └── 📄 scaler.pkl # Escalador para nuevas predicciones
 │
-├── 📁 images/
-│ ├── 📄 matriz_confusion.png # Matriz de confusión
-│ ├── 📄 curva_roc.png # Curva ROC
-│ └── 📄 importancia_variables.png # Importancia de features
+├── images/
+│ ├── Grafica 1.Matriz de Confusion.png
+│ ├── 📄 Grafica 2.Curva ROC.png
+│ └── Grafica 3. Importancia de Variables...
 │
-├── 📄 requirements.txt # Dependencias del proyecto
+├── requirements.txt # Dependencias del proyecto
 ├── 📄 README.md # Este archivo
 └── 📄 LICENSE # Licencia MIT
 
@@ -80,28 +80,24 @@ Telecom-X-Parte2/
 
 ## 📈 Resultados del Modelo
 
-### Métricas de Evaluación (Conjunto de Prueba)
-
-| Métrica | Valor | Interpretación |
-|---------|-------|---------------|
-| **Accuracy** | 0.XX | % de predicciones correctas totales |
-| **Precision** | 0.XX | De los predichos como churn, % que realmente churnearon |
-| **Recall** | 0.XX | De los que realmente churnearon, % que identificamos |
-| **F1-Score** | 0.XX | Balance armónico entre precision y recall |
-| **ROC-AUC** | 0.XX | Capacidad del modelo para discriminar entre clases |
+| **Accuracy** | **0.763** (76.3%) | % de predicciones correctas totales |
+| **Precision** | **0.543** (54.3%) | De los predichos como churn, 54.3% realmente churnearon |
+| **Recall** | **0.682** (68.2%) | De los que realmente churnearon, identificamos 68.2% |
+| **F1-Score** | **0.605** (60.5%) | Balance armónico entre precision y recall |
+| **ROC-AUC** | **0.830** (83.0%) | Excelente capacidad de discriminación |
 
 > 📊 *Valores actualizados al ejecutar el notebook*
 
 ### Visualizaciones Clave
 
 ![Matriz de Confusión](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%201.Matriz%20de%20Confusion.png?raw=true)
-*Figura 1: El modelo muestra buen equilibrio entre falsos positivos y falsos negativos*
+*Figura 1: Matriz de confusión - VP: 818, FP: 215, FN: 119, VN: 255*
 
 ![Curva ROC](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%202.Curva%20ROC.png?raw=true)
-*Figura 2: AUC > 0.70 indica capacidad predictiva útil para negocio*
+*Figura 2: Curva ROC - AUC = 0.830 (Excelente capacidad predictiva)*
 
 ![Importancia de Variables](https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction/blob/main/Grafica%203.%20Importancia%20de%20Valiables%20en%20la%20Prediccion%20de%20Churn.png?raw=true)
-*Figura 3: `tipo_contrato` y `antiguedad_meses` son los predictores más fuertes*
+*Figura 3: Variables más importantes - cargo_mensual, tipo_contrato, antiguedad_meses*
 
 
 ## 📊 Resultados del Modelo
@@ -124,6 +120,33 @@ Telecom-X-Parte2/
 - Implementar programa de retención para clientes nuevos (<12 meses)
 - Revisar estructura de precios para cargos mensuales altos
 ---
+
+## 🔍 Insights del Análisis Exploratorio (Parte 1)
+
+### Hallazgos Clave del EDA
+
+1. **Distribución de Churn**
+   - 26.6% de los clientes cancelaron el servicio
+   - 73.4% permanecen activos
+
+2. **Tipo de Contrato**
+   - Contratos "Month-to-month": 42.7% de churn
+   - Contratos "One year": 11.3% de churn
+   - Contratos "Two year": 2.8% de churn
+
+3. **Antigüedad del Cliente**
+   - Clientes con <12 meses: Mayor tasa de cancelación
+   - Clientes con >36 meses: Menor probabilidad de churn
+
+4. **Cargos Mensuales**
+   - Clientes que cancelaron: Cargo promedio ~$74.44
+   - Clientes activos: Cargo promedio ~$61.27
+
+5. **Método de Pago**
+   - Cheque electrónico: ~35% de churn
+   - Pagos automáticos: ~18% de churn
+
+
 
 ## 🔍 Insights Estratégicos
 
@@ -170,12 +193,6 @@ Prioridad 4: Segmentación Inteligente
 🤖 Usar el modelo para score de riesgo en tiempo real
 🎯 Ofertas personalizadas según perfil de riesgo
 📈 Monitoreo continuo de efectividad de acciones
-
-## 🚀 Ejecución
-1. Abre el notebook en Google Colab
-2. Ejecuta todas las celdas en orden
-3. Los datos se cargan automáticamente desde la API
-
 
 🚀 Instrucciones de Ejecución
 Requisitos
@@ -291,31 +308,16 @@ probabilidades = modelo.predict_proba(X_nuevos_scaled)[:, 1]
 nuevos_clientes['prediccion_churn'] = predicciones
 nuevos_clientes['probabilidad_churn'] = probabilidades.round(3)
 
-📦 Dependencias
-# requirements.txt
-pandas>=1.5.0
-numpy>=1.23.0
-matplotlib>=3.6.0
-seaborn>=0.12.0
-scikit-learn>=1.2.0
-jupyter>=1.0.0
-joblib>=1.2.0
-
-🤝 Contribuciones
-Las contribuciones son bienvenidas. Para contribuir:
-Haz un fork del proyecto
-Crea una rama: git checkout -b feature/nueva-mejora
-Commit: git commit -m 'feat: agregar nueva funcionalidad'
-Push: git push origin feature/nueva-mejora
-Abre un Pull Request
 
 📝 Licencia
 Este proyecto está bajo la Licencia MIT. Ver LICENSE para detalles.
 
 👤 Autor
 Jesica Sosa G
- 🐙 https://github.com/Jesy284/Telecom-X-Parte2-Churn-Prediction
-      
+🔗 [LinkedIn](https://www.linkedin.com/in/jesica-sosa-44099821a/)  
+🐙 [GitHub](https://github.com/Jesy284)  
+
+*Fecha:09/03/2026*
 Proyecto desarrollado como parte del programa Alura ONE - Data Science LATAM
 Challenge Telecom X - Parte 2: Modelo Predictivo de Churn
 
